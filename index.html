@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test exercise</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+  <div class="main__page">
+    <h1 class="main__page-title">Daily information</h1>
+    <button class="main__page-btn js-open-modal" data-modal="1">open</button>
+  </div>
+
+  <div class="modal" data-modal="1">
+    <div class="modal__top">
+      <h3 class="modal__title">HTML/CSS/JS Test</h3>
+      <svg class="modal__cross js-modal-close" fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z">
+        </path>
+      </svg>
+    </div>
+    <div class="modal__main-container">
+
+      <!-- search blcok start -->
+      <div class="search__block">
+        <div class="search__block-item">
+          <img src="img/icon/search-icon.svg" class="search__icon" id="icon"></img>
+          <input type="text" placeholder="Search anything..." class="search__input">
+          <svg class="search__cross" fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z">
+            </path>
+          </svg>
+        </div>
+        <div class="search__block-count">
+          <div class="search__block-count-item">
+            <span class="count__item-currency">USD</span>
+            <p class="count__item-currency-value">120.18</p>
+            <span class="count__item-line-between"></span>
+            <img src="img/icon/persent-top.svg" alt="" class="count__item-percent-top">
+            <p class="count__item-percent">3.29%</p>
+          </div>
+        </div>
+      </div>
+      <!-- search block end  -->
+
+      <!-- renge block start -->
+      <div class="range__block">
+        <div class="range__block-item">
+          <span class="count__item-currency">Day Range</span>
+          <div class="range__block-item-info">
+            <span class="range__value">227.13 - 233.37</span>
+            <input type="range" min="127.13" max="233.37" value="1" oninput="displaySliderValue(this);">
+          </div>
+        </div>
+        <span class="range__line-between"></span>
+        <div class="range__block-item">
+          <span class="count__item-currency">52 Week Range </span>
+          <div class="range__block-item-info">
+            <span class="range__value">127.13 - 233.37</span>
+            <input type="range" min="127.13" max="233.37" value="1" oninput="displaySliderValue(this);">
+          </div>
+        </div>
+        <span class="range__line-between"></span>
+        <div class="range__block-item">
+          <span class="count__item-currency">Market Cap</span>
+          <div class="range__block-item-info">
+            <span class="range__value">2.04T USD</span>
+          </div>
+        </div>
+        <span class="range__line-between"></span>
+        <div class="range__block-item">
+          <span class="count__item-currency">Beta</span>
+          <div class="range__block-item-info">
+            <span class="range__value">1.25</span>
+          </div>
+        </div>
+      </div>
+      <!-- range blcok end -->
+
+      <!-- general info desc start -->
+      <div class="content__desc">
+        <div class="tabs content__desc-wrapper">
+          <p data-tab-target="#general" class="tab content__desc-wrapper-item active">
+            General
+          </p>
+          <p data-tab-target="#profile" class="tab content__desc-wrapper-item">
+            Profile
+          </p>
+          <p data-tab-target="#statistics" class="tab content__desc-wrapper-item">
+            Statistics
+          </p>
+        </div>
+
+        <div class="tabs-content">
+          <div id="general" data-tab-content="" class="active">
+            <p class="content__subdesc">Apple Inc. designs, manufactures, and markets smartphones, personal computers, tablets, wearables, and accessories worldwide. It also sells various related services. The company offers iPhone, a line of smartphones; Mac, a line of personal computers; iPad, a line of multi-purpose tablets; and wearables, home, and accessories...</p>
+            <p class="content__subdesc" id="plus-1" hidden>Apple Inc. designs, manufactures, and markets smartphones, personal computers, tablets, wearables, and accessories worldwide. It also sells various related services. The company offers iPhone, a line of smartphones; Mac, a line of personal computers; iPad, a line of multi-purpose tablets; and wearables, home, and accessories...</p>
+            <button data-toggle-id="plus-1" class="content__subdesc-btn" onclick="toggle(this)">Show More</button>
+          </div>
+
+          <div id="profile" data-tab-content="">
+            <p class="content__subdesc">Get intersections between a casted ray and this mesh. Raycaster.intersectObject will call this method, but the results are not ordered....</p>
+            <p class="content__subdesc" id="plus-2" hidden>Get intersections between a casted ray and this mesh. Raycaster.intersectObject will call this method, but the results are not ordered....</p>
+            <button data-toggle-id="plus-2" class="content__subdesc-btn" onclick="toggle(this)">Show More</button>
+          </div>
+
+          <div id="statistics" data-tab-content="">
+            <p class="content__subdesc">geometry — (optional) an instance of BufferGeometry. Default is a new BufferGeometry. material — (optional) a single or an array of Material. Default is a new MeshBasicMaterial...</p>
+            <p class="content__subdesc" id="plus-3" hidden>geometry — (optional) an instance of BufferGeometry. Default is a new BufferGeometry. material — (optional) a single or an array of Material. Default is a new MeshBasicMaterial...</p>
+            <button data-toggle-id="plus-3" class="content__subdesc-btn" onclick="toggle(this)">Show More</button>
+          </div>
+        </div>
+
+        <!-- chart section start -->
+
+        <div class="charts__main">
+          <div class="charts__main-item">
+            <div class="canvas">
+              <canvas height="height: 100px;width:150px" id="myChart"></canvas>
+            </div>
+            <div class="canvas-2">
+              <canvas height="height:200px;width:200px" id="myChart-2"></canvas>
+            </div>
+            <div class="charts__main-item-bottom">
+              <canvas height="height: 100px;width:150px" id="myChart-3"></canvas>
+            </div>
+          </div>
+          <div class="charts__main-item charts__main-item-2">
+            <div class="charts__main-item-general">
+              <p class="charts__main-item-title item-title-main">General Information</p>
+              <div class="charts__main-item-desc">
+                <p class="charts__main-item-title-2">type</p>
+                <p class="charts__main-item-title">common stock</p>
+              </div>
+              <div class="charts__main-item-desc">
+                <p class="charts__main-item-title-2">exchange</p>
+                <p class="charts__main-item-title">nasdaq</p>
+              </div>
+            </div>
+            <div class="table__main">
+              <h2 class="item-title-main">Адаптивная таблица</h2>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr class="table-wrap-subtitle">
+                      <th>Name</th>
+                      <th>Price</th>
+                      <th>Daily Exchange %</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td data-label="Услуга"><span>AAPL</span> Apple Inc</td>
+                      <td data-label="Цена"><b>120.03</b></td>
+                      <td data-label="Скидка"><span>50%</span></td>
+                    </tr>
+                    <tr>
+                      <td data-label="Услуга"><span>AAPL</span> Apple Inc</td>
+                      <td data-label="Цена"><b>120.03</b></td>
+                      <td data-label="Скидка"><span>50%</span></td>
+                    </tr>
+                    <tr>
+                      <td data-label="Услуга"><span>AAPL</span> Apple Inc</td>
+                      <td data-label="Цена"><b>120.03</b></td>
+                      <td data-label="Скидка"><span>50%</span></td>
+                    </tr>
+                    <tr>
+                      <td data-label="Услуга"><span>AAPL</span> Apple Inc</td>
+                      <td data-label="Цена"><b>120.03</b></td>
+                      <td data-label="Скидка"><span style="color: #F6544C;">50%</span></td>
+                    </tr>
+                    <tr>
+                      <td data-label="Услуга"><span>AAPL</span> Apple Inc</td>
+                      <td data-label="Цена"><b>120.03</b></td>
+                      <td data-label="Скидка"><span>50%</span></td>
+                    </tr>
+                    <tr>
+                      <td data-label="Услуга"><span>AAPL</span> Apple Inc</td>
+                      <td data-label="Цена"><b>120.03</b></td>
+                      <td data-label="Скидка"><span style="color: #F6544C;">50%</span></td>
+                    </tr>
+                    <tr>
+                      <td data-label="Услуга"><span>AAPL</span> Apple Inc</td>
+                      <td data-label="Цена"><b>120.03</b></td>
+                      <td data-label="Скидка"><span>50%</span></td>
+                    </tr>
+                    <tr>
+                      <td data-label="Услуга"><span>AAPL</span> Apple Inc</td>
+                      <td data-label="Цена"><b>120.03</b></td>
+                      <td data-label="Скидка"><span>50%</span></td>
+                    </tr>
+                    <tr>
+                      <td data-label="Услуга"><span>AAPL</span> Apple Inc</td>
+                      <td data-label="Цена"><b>120.03</b></td>
+                      <td data-label="Скидка"><span>50%</span></td>
+                    </tr>
+                    <tr>
+                      <td data-label="Услуга"><span>AAPL</span> Apple Inc</td>
+                      <td data-label="Цена"><b>120.03</b></td>
+                      <td data-label="Скидка"><span>50%</span></td>
+                    </tr>
+                    <tr>
+                        <td data-label="Услуга"><span>AAPL</span> Apple Inc</td>
+                        <td data-label="Цена"><b>120.03</b></td>
+                        <td data-label="Скидка"><span>50%</span></td>
+                      </tr>
+                      <tr>
+                        <td data-label="Услуга"><span>AAPL</span> Apple Inc</td>
+                        <td data-label="Цена"><b>120.03</b></td>
+                        <td data-label="Скидка"><span>50%</span></td>
+                      </tr>
+                      <tr>
+                        <td data-label="Услуга"><span>AAPL</span> Apple Inc</td>
+                        <td data-label="Цена"><b>120.03</b></td>
+                        <td data-label="Скидка"><span>50%</span></td>
+                      </tr>
+                      <tr>
+                        <td data-label="Услуга"><span>AAPL</span> Apple Inc</td>
+                        <td data-label="Цена"><b>120.03</b></td>
+                        <td data-label="Скидка"><span>50%</span></td>
+                      </tr>
+                      <tr>
+                        <td data-label="Услуга"><span>AAPL</span> Apple Inc</td>
+                        <td data-label="Цена"><b>120.03</b></td>
+                        <td data-label="Скидка"><span>50%</span></td>
+                      </tr>
+                      
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="charts__main-item-bottom">
+              <canvas height="height: 150px;width:150px" id="myChart-4"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- chart section end -->
+
+      </div>
+      <!-- general info desc end -->
+    </div>
+  </div>
+  <div class="overlay js-overlay-modal"></div>
+
+  <!-- scripts start -->
+  <script src="js/app.js"></script>
+  <script src="js/charts.js"></script>
+  <!-- scripts end -->
+</body>
+
+</html>
